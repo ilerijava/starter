@@ -37,7 +37,8 @@ public class DosyaSecim {
                  * Dosyaya ekleme yapmak(append) için FileOutputStream ile
                  * kullanmak gerekiyor.
                  */
-                PrintWriter writer = new PrintWriter(new FileOutputStream(selectedFile, true));
+                PrintWriter writer = new PrintWriter(
+                        new FileOutputStream(selectedFile, true));
                 writer.write("yeni");
                 writer.flush();
                 writer.close();
