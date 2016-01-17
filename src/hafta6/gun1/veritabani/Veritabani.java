@@ -1,6 +1,5 @@
 package hafta6.gun1.veritabani;
 
-import com.mysql.jdbc.Driver;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -131,6 +130,30 @@ public class Veritabani {
             e.printStackTrace();
         }
         return silindiMi;
+    }
+
+    public Kullanici kullaniciGetir(Kullanici kullanici) {
+        Kullanici k = null;
+        try {
+            String sql = "SELECT * FROM kullanici WHERE kullaniciadi = ? "
+                    + " AND sifre = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, kullanici.getKullaniciAdi());
+            ps.setString(2, kullanici.getSifre());
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String ad = rs.getString("ad");
+                String soyad = rs.getString("soyad");
+                String kullaniciAdi = rs.getString("kullaniciadi");
+                String sifre = rs.getString("sifre");
+                k = new Kullanici(id, ad, soyad, kullaniciAdi, sifre);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return k;
+
     }
 
 }

@@ -64,5 +64,7 @@ public class Kullanici {
         return "Kullanici{" + "id=" + id + ", ad=" + ad + ", soyad="
                 + soyad + ", kullaniciAdi=" + kullaniciAdi + ", sifre=" + sifre + '}';
     }
+    
+    
 
 }

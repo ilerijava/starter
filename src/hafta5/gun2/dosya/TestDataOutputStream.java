@@ -1,4 +1,4 @@
-package hafta6.gun1;
+package hafta5.gun2.dosya;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
